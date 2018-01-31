@@ -94,16 +94,16 @@ public class Empresa {
 
         switch (tipo){
             case 't'://Poligono de Carton
-                this.coordenadasTriangulo();
+                this.materialTriangulo();
                 break;
             case 'c'://Poligono de Madera
-                this.coordenadasCuadrilatero();
+                this.materialCuadrilatero();
                 break;
             case 'p'://Poligono de Plastico
-                this.coordenadasPentagono();
+                this.materialPentagono();
                 break;
             case 'h'://Poligono de Plastico
-                this.coordenadasHexagono();
+                this.materialHexagono();
                 break;
 
             default:
@@ -114,10 +114,10 @@ public class Empresa {
     }
 
     /**
-     * Método coordenadasPoligonoCarton solicita las Coordenadas del Poligono y lo añade a la listaPoligonos
+     * Método materialCuadrilatero solicita el material del Cuadrilatero al Usuario
      */
 
-    public void coordenadasCuadrilatero(){
+    public void materialCuadrilatero(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
 
@@ -130,6 +130,10 @@ public class Empresa {
         crearCuadrilatero(opcion);
     }
 
+    /**
+     * Método crearCuadrilatero crea un Cuadrilatero según el tipo seleccionado
+     * @param opcion tipo de Cuadrilatero seleccionado
+     */
     private void crearCuadrilatero (int opcion){
         IPoligono poligono;
         Scanner sc = new Scanner (System.in);
@@ -143,21 +147,21 @@ public class Empresa {
                 ((Cuadrilatero) poligono).setMaterial("Carton");
                 ((Cuadrilatero) poligono).setPrecio(100);
                 ((Cuadrilatero) poligono).setColor("gris");
-                ((Cuadrilatero) poligono).setSuplemento(0f);
+
                 break;
             case 2:
 
                 ((Cuadrilatero) poligono).setMaterial("Plastico");
                 ((Cuadrilatero) poligono).setPrecio(300);
                 ((Cuadrilatero) poligono).setColor("gris");
-                ((Cuadrilatero) poligono).setSuplemento(0f);
+
                 break;
             case 3:
 
                 ((Cuadrilatero) poligono).setMaterial("Madera");
                 ((Cuadrilatero) poligono).setPrecio(500);
                 ((Cuadrilatero) poligono).setColor("gris");
-                ((Cuadrilatero) poligono).setSuplemento(0f);
+
                 break;
             default:
                 break;
@@ -184,8 +188,11 @@ public class Empresa {
         listaPoligonos.add((Poligono)poligono);
 
         }
+    /**
+     * Método materialTriangulo solicita el material del Triangulo al Usuario
+     */
 
-    public void coordenadasTriangulo(){
+    public void materialTriangulo(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
 
@@ -197,6 +204,10 @@ public class Empresa {
 
         crearTriangulo(opcion);
     }
+    /**
+     * Método crearTriangulo crea un Triangulo según el tipo seleccionado
+     * @param opcion tipo de Triangulo seleccionado
+     */
 
     private void crearTriangulo (int opcion){
         IPoligono poligono;
@@ -211,21 +222,21 @@ public class Empresa {
                 ((Triangulo) poligono).setMaterial("Carton");
                 ((Triangulo) poligono).setPrecio(100);
                 ((Triangulo) poligono).setColor("gris");
-                ((Triangulo) poligono).setSuplemento(0f);
+
                 break;
             case 2:
 
                 ((Triangulo) poligono).setMaterial("Plastico");
                 ((Triangulo) poligono).setPrecio(300);
                 ((Triangulo) poligono).setColor("gris");
-                ((Triangulo) poligono).setSuplemento(0f);
+
                 break;
             case 3:
 
                 ((Triangulo) poligono).setMaterial("Madera");
                 ((Triangulo) poligono).setPrecio(500);
                 ((Triangulo) poligono).setColor("gris");
-                ((Triangulo) poligono).setSuplemento(0f);
+
                 break;
             default:
                 break;
@@ -253,7 +264,11 @@ public class Empresa {
 
     }
 
-    public void coordenadasPentagono(){
+    /**
+     * Método materialPentagono solicita el material del Pentagono al Usuario
+     */
+
+    public void materialPentagono(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
 
@@ -266,6 +281,10 @@ public class Empresa {
         crearPentagono(opcion);
     }
 
+    /**
+     * Método crearPentagono crea un Pentagono según el tipo seleccionado
+     * @param opcion tipo de Pentagono seleccionado
+     */
     private void crearPentagono(int opcion){
         IPoligono poligono;
         Scanner sc = new Scanner (System.in);
@@ -279,21 +298,21 @@ public class Empresa {
                 ((Pentagono) poligono).setMaterial("Carton");
                 ((Pentagono) poligono).setPrecio(100);
                 ((Pentagono) poligono).setColor("gris");
-                ((Pentagono) poligono).setSuplemento(0f);
+
                 break;
             case 2:
 
                 ((Pentagono) poligono).setMaterial("Plastico");
                 ((Pentagono) poligono).setPrecio(300);
                 ((Pentagono) poligono).setColor("gris");
-                ((Pentagono) poligono).setSuplemento(0f);
+
                 break;
             case 3:
 
                 ((Pentagono) poligono).setMaterial("Madera");
                 ((Pentagono) poligono).setPrecio(500);
                 ((Pentagono) poligono).setColor("gris");
-                ((Pentagono) poligono).setSuplemento(0f);
+
                 break;
             default:
                 break;
@@ -321,7 +340,10 @@ public class Empresa {
 
     }
 
-    public void coordenadasHexagono(){
+    /**
+     * Método materialHexagono solicita el material del Hexagono al Usuario
+     */
+    public void materialHexagono(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
 
@@ -333,6 +355,11 @@ public class Empresa {
 
         crearHexagono(opcion);
     }
+
+    /**
+     * Método crearHexagono crea un Hexagono según el tipo seleccionado
+     * @param opcion tipo de Hexagono seleccionado
+     */
 
     private void crearHexagono(int opcion){
         IPoligono poligono;
@@ -347,21 +374,21 @@ public class Empresa {
                 (( Hexagono) poligono).setMaterial("Carton");
                 (( Hexagono) poligono).setPrecio(100);
                 (( Hexagono) poligono).setColor("gris");
-                (( Hexagono) poligono).setSuplemento(0f);
+
                 break;
             case 2:
 
                 (( Hexagono) poligono).setMaterial("Plastico");
                 (( Hexagono) poligono).setPrecio(300);
                 (( Hexagono) poligono).setColor("gris");
-                (( Hexagono) poligono).setSuplemento(0f);
+
                 break;
             case 3:
 
                 (( Hexagono) poligono).setMaterial("Madera");
                 (( Hexagono) poligono).setPrecio(500);
                 (( Hexagono) poligono).setColor("gris");
-                (( Hexagono) poligono).setSuplemento(0f);
+
                 break;
             default:
                 break;

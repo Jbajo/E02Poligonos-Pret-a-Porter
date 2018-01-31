@@ -5,6 +5,11 @@ package com.cice.modelo;
  */
 public class Triangulo extends Poligono {
 
+    public Triangulo() {
+        super();
+        this.setSuplemento(0);
+    }
+
     @Override
     public void setMaterial(String material) {
         super.setMaterial(material);

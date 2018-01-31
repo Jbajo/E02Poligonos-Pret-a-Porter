@@ -4,6 +4,11 @@ package com.cice.modelo;
  * @author Javier Bajo Chacon  javier.bajochacon@gmail.com
  */
 public class Pentagono extends Poligono {
+
+    public Pentagono() {
+        super();
+        this.setSuplemento(0);
+    }
     @Override
     public void setMaterial(String material) {
         super.setMaterial(material);

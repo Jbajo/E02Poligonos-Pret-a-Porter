@@ -5,6 +5,11 @@ package com.cice.modelo;
  */
 public class Hexagono extends Poligono{
 
+    public Hexagono() {
+        super();
+        this.setSuplemento(0);
+    }
+
     @Override
     public void setMaterial(String material) {
         super.setMaterial(material);
