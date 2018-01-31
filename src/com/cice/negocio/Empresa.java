@@ -1,8 +1,8 @@
 package com.cice.negocio;
 
+import com.cice.Interfaces.Clases.*;
 import com.cice.Interfaces.EnumMateriales;
 import com.cice.Interfaces.IPoligono;
-import com.cice.modelo.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -122,52 +122,62 @@ public class Empresa {
     private void materialCuadrilatero(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
-
+        char opcion2;
 
         do {
             System.out.println("Introduzca un material --> 1) Carton 2) Plastico 3) Madera");
             opcion = Integer.parseInt(sc.nextLine());
         }while (opcion<1 || opcion >3);
+        do {
+            System.out.println("Desea que sea de Autor (s/n)");
+            opcion2 = sc.nextLine().charAt(0);
+        }while ((opcion2 !='s') && (opcion2 !='n'));
 
-        crearCuadrilatero(opcion);
+        if(opcion2=='s')
+            fabricarCuadrilatero(opcion, true);
+        else
+            fabricarCuadrilatero(opcion, false);
     }
 
     /**
      * Método crearCuadrilatero crea un Cuadrilatero según el tipo seleccionado
      * @param opcion tipo de Cuadrilatero seleccionado
      */
-    private void crearCuadrilatero (int opcion){
-        IPoligono poligono;
+    private void fabricarCuadrilatero (int opcion, boolean autor){
+        Cuadrilatero cuadrilatero = new Cuadrilatero();
 
-        poligono = new Cuadrilatero();
+
         switch (opcion) {
             case 1:
 
-                ((Cuadrilatero) poligono).setMaterial(EnumMateriales.CARTON);
-                ((Cuadrilatero) poligono).setPrecio(100);
-                ((Cuadrilatero) poligono).setColor("gris");
-                ((Poligono) poligono).setTemporada("primavera-verano");
+                cuadrilatero.setMaterial(EnumMateriales.CARTON);
+                cuadrilatero.setPrecio(100);
+                cuadrilatero.setColor("gris");
+                cuadrilatero.setTemporada("primavera-verano");
+                cuadrilatero.setAutor(autor);
                 break;
             case 2:
 
-                ((Cuadrilatero) poligono).setMaterial(EnumMateriales.PLASTICO);
-                ((Cuadrilatero) poligono).setPrecio(300);
-                ((Cuadrilatero) poligono).setColor("gris");
-                ((Poligono) poligono).setTemporada("primavera-verano");
+                cuadrilatero.setMaterial(EnumMateriales.PLASTICO);
+                cuadrilatero.setPrecio(300);
+                cuadrilatero.setColor("gris");
+                cuadrilatero.setTemporada("primavera-verano");
+                cuadrilatero.setAutor(autor);
                 break;
             case 3:
 
-                ((Cuadrilatero) poligono).setMaterial(EnumMateriales.MADERA);
-                ((Cuadrilatero) poligono).setPrecio(500);
-                ((Cuadrilatero) poligono).setColor("gris");
-                ((Poligono) poligono).setTemporada("primavera-verano");
+                cuadrilatero.setMaterial(EnumMateriales.MADERA);
+                cuadrilatero.setPrecio(500);
+                cuadrilatero.setColor("gris");
+                cuadrilatero.setTemporada("primavera-verano");
+                cuadrilatero.setAutor(autor);
                 break;
             default:
                 break;
         }
-        poligonoAniadirCoodenada(poligono, 4);
+        poligonoAniadirCoodenada(cuadrilatero, 4);
 
-        listaPoligonos.add((Poligono)poligono);
+        listaPoligonos.add(cuadrilatero);
 
         }
 
@@ -178,56 +188,64 @@ public class Empresa {
     private void materialTriangulo(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
+        char opcion2;
 
 
         do {
             System.out.println("Introduzca un material --> 1) Carton 2) Plastico 3) Madera");
             opcion = Integer.parseInt(sc.nextLine());
         }while (opcion<1 || opcion >3);
+        do {
+            System.out.println("Desea que sea de Autor (s/n)");
+            opcion2 = sc.nextLine().charAt(0);
+        }while ((opcion2 !='s') && (opcion2 !='n'));
 
-        crearTriangulo(opcion);
+        if(opcion2=='s')
+            fabricarTriangulo(opcion, true);
+        else
+            fabricarTriangulo(opcion, false);
     }
     /**
-     * Método crearTriangulo crea un Triangulo según el tipo seleccionado
+     * Método fabricarTriangulo crea un Triangulo según el tipo seleccionado
      * @param opcion tipo de Triangulo seleccionado
      */
 
-    private void crearTriangulo (int opcion){
-        IPoligono poligono;
-        Scanner sc = new Scanner (System.in);
-        String aux="1";
-        float x,y;
-        poligono = new Triangulo();
+    private void fabricarTriangulo (int opcion, boolean autor){
+        Triangulo triangulo = new Triangulo();
+
 
         switch (opcion) {
             case 1:
 
-                ((Triangulo) poligono).setMaterial(EnumMateriales.CARTON);
-                ((Triangulo) poligono).setPrecio(100);
-                ((Triangulo) poligono).setColor("gris");
-                ((Poligono) poligono).setTemporada("primavera-verano");
+                triangulo.setMaterial(EnumMateriales.CARTON);
+                triangulo.setPrecio(100);
+                triangulo.setColor("gris");
+                triangulo.setTemporada("primavera-verano");
+                triangulo.setAutor(autor);
                 break;
             case 2:
 
-                ((Triangulo) poligono).setMaterial(EnumMateriales.PLASTICO);
-                ((Triangulo) poligono).setPrecio(300);
-                ((Triangulo) poligono).setColor("gris");
-                ((Poligono) poligono).setTemporada("primavera-verano");
+                triangulo.setMaterial(EnumMateriales.PLASTICO);
+                triangulo.setPrecio(300);
+                triangulo.setColor("gris");
+                triangulo.setTemporada("primavera-verano");
+                triangulo.setAutor(autor);
                 break;
             case 3:
 
-                ((Triangulo) poligono).setMaterial(EnumMateriales.MADERA);
-                ((Triangulo) poligono).setPrecio(500);
-                ((Triangulo) poligono).setColor("gris");
-                ((Poligono) poligono).setTemporada("primavera-verano");
-
+                triangulo.setMaterial(EnumMateriales.MADERA);
+                triangulo.setPrecio(500);
+                triangulo.setColor("gris");
+                triangulo.setTemporada("primavera-verano");
+                triangulo.setAutor(autor);
                 break;
             default:
                 break;
         }
+        poligonoAniadirCoodenada(triangulo, 4);
 
-        poligonoAniadirCoodenada(poligono, 3);
-        listaPoligonos.add((Poligono)poligono);
+        listaPoligonos.add(triangulo);
+
 
     }
 
@@ -238,55 +256,64 @@ public class Empresa {
     private void materialPentagono(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
-
+        char opcion2;
 
         do {
             System.out.println("Introduzca un material --> 1) Carton 2) Plastico 3) Madera");
             opcion = Integer.parseInt(sc.nextLine());
         }while (opcion<1 || opcion >3);
+        do {
+            System.out.println("Desea que sea de Autor (s/n)");
+            opcion2 = sc.nextLine().charAt(0);
+        }while ((opcion2 !='s') && (opcion2 !='n'));
 
-        crearPentagono(opcion);
+        if(opcion2=='s')
+            fabricarPentagono(opcion, true);
+        else
+            fabricarPentagono(opcion, false);
+
     }
 
     /**
-     * Método crearPentagono crea un Pentagono según el tipo seleccionado
+     * Método fabricarPentagono crea un Pentagono según el tipo seleccionado
      * @param opcion tipo de Pentagono seleccionado
      */
-    private void crearPentagono(int opcion){
-        IPoligono poligono;
-        Scanner sc = new Scanner (System.in);
-        String aux="1";
-        float x,y;
-        poligono = new Pentagono();
+    private void fabricarPentagono(int opcion, boolean autor){
+        Pentagono pentagono = new Pentagono();
+
 
         switch (opcion) {
             case 1:
 
-                ((Pentagono) poligono).setMaterial(EnumMateriales.CARTON);
-                ((Pentagono) poligono).setPrecio(100);
-                ((Pentagono) poligono).setColor("gris");
-                ((Poligono) poligono).setTemporada("primavera-verano");
+                pentagono.setMaterial(EnumMateriales.CARTON);
+                pentagono.setPrecio(100);
+                pentagono.setColor("gris");
+                pentagono.setTemporada("primavera-verano");
+                pentagono.setAutor(autor);
                 break;
             case 2:
 
-                ((Pentagono) poligono).setMaterial(EnumMateriales.PLASTICO);
-                ((Pentagono) poligono).setPrecio(300);
-                ((Pentagono) poligono).setColor("gris");
-                ((Poligono) poligono).setTemporada("primavera-verano");
+                pentagono.setMaterial(EnumMateriales.PLASTICO);
+                pentagono.setPrecio(300);
+                pentagono.setColor("gris");
+                pentagono.setTemporada("primavera-verano");
+                pentagono.setAutor(autor);
                 break;
             case 3:
 
-                ((Pentagono) poligono).setMaterial(EnumMateriales.MADERA);
-                ((Pentagono) poligono).setPrecio(500);
-                ((Pentagono) poligono).setColor("gris");
-                ((Poligono) poligono).setTemporada("primavera-verano");
-
+                pentagono.setMaterial(EnumMateriales.MADERA);
+                pentagono.setPrecio(500);
+                pentagono.setColor("gris");
+                pentagono.setTemporada("primavera-verano");
+                pentagono.setAutor(autor);
                 break;
             default:
                 break;
         }
-        poligonoAniadirCoodenada(poligono,5 );
-        listaPoligonos.add((Poligono)poligono);
+        poligonoAniadirCoodenada(pentagono, 4);
+
+        listaPoligonos.add(pentagono);
+
 
     }
 
@@ -296,56 +323,65 @@ public class Empresa {
     private void materialHexagono(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
+        char opcion2;
 
 
         do {
             System.out.println("Introduzca un material --> 1) Carton 2) Plastico 3) Madera");
             opcion = Integer.parseInt(sc.nextLine());
         }while (opcion<1 || opcion >3);
+        do {
+            System.out.println("Desea que sea de Autor (s/n)");
+            opcion2 = sc.nextLine().charAt(0);
+        }while ((opcion2 !='s') && (opcion2 !='n'));
 
-        crearHexagono(opcion);
+        if(opcion2=='s')
+            fabricarHexagono(opcion, true);
+        else
+            fabricarHexagono(opcion, false);
     }
 
     /**
-     * Método crearHexagono crea un Hexagono según el tipo seleccionado
+     * Método fabricarHexagono crea un Hexagono según el tipo seleccionado
      * @param opcion tipo de Hexagono seleccionado
      */
 
-    private void crearHexagono(int opcion){
-        IPoligono poligono;
-        Scanner sc = new Scanner (System.in);
-        String aux="1";
-        float x,y;
-        poligono = new Hexagono();
+    private void fabricarHexagono(int opcion, boolean autor){
+        Hexagono hexagono = new Hexagono();
+
 
         switch (opcion) {
             case 1:
 
-                (( Hexagono) poligono).setMaterial(EnumMateriales.CARTON);
-                (( Hexagono) poligono).setPrecio(100);
-                (( Hexagono) poligono).setColor("gris");
-                ((Poligono) poligono).setTemporada("primavera-verano");
+                hexagono.setMaterial(EnumMateriales.CARTON);
+                hexagono.setPrecio(100);
+                hexagono.setColor("gris");
+                hexagono.setTemporada("primavera-verano");
+                hexagono.setAutor(autor);
                 break;
             case 2:
 
-                (( Hexagono) poligono).setMaterial(EnumMateriales.PLASTICO);
-                (( Hexagono) poligono).setPrecio(300);
-                (( Hexagono) poligono).setColor("gris");
-                ((Poligono) poligono).setTemporada("primavera-verano");
+                hexagono.setMaterial(EnumMateriales.PLASTICO);
+                hexagono.setPrecio(300);
+                hexagono.setColor("gris");
+                hexagono.setTemporada("primavera-verano");
+                hexagono.setAutor(autor);
                 break;
             case 3:
 
-                (( Hexagono) poligono).setMaterial(EnumMateriales.MADERA);
-                (( Hexagono) poligono).setPrecio(500);
-                (( Hexagono) poligono).setColor("gris");
-                ((Poligono) poligono).setTemporada("primavera-verano");
-
+                hexagono.setMaterial(EnumMateriales.MADERA);
+                hexagono.setPrecio(500);
+                hexagono.setColor("gris");
+                hexagono.setTemporada("primavera-verano");
+                hexagono.setAutor(autor);
                 break;
             default:
                 break;
         }
-        poligonoAniadirCoodenada(poligono,6 );
-        listaPoligonos.add((Poligono)poligono);
+        poligonoAniadirCoodenada(hexagono, 4);
+
+        listaPoligonos.add(hexagono);
+
 
     }
 

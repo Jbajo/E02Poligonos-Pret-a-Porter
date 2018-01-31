@@ -1,4 +1,4 @@
-package com.cice.modelo;
+package com.cice.Interfaces.Clases;
 
 /**
  * @author Javier Bajo Chacon  javier.bajochacon@gmail.com

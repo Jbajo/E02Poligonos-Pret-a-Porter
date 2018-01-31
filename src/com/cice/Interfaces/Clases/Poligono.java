@@ -1,4 +1,4 @@
-package com.cice.modelo;
+package com.cice.Interfaces.Clases;
 
 import com.cice.Interfaces.EnumMateriales;
 import com.cice.Interfaces.IPoligono;
@@ -14,36 +14,45 @@ public abstract class Poligono implements IPoligono {
     protected EnumMateriales material;
     protected String color;
     protected float precio;
-    protected ArrayList<Punto> listaVertices;
+    private ArrayList<Punto> listaVertices;
     protected float suplemento;
-    protected boolean coloreado;
     protected String temporada;
+    protected boolean autor;
 
-    public Poligono(EnumMateriales material, float precio, ArrayList<Punto> listaVertices, String temporada) {
+
+    public Poligono(EnumMateriales material, float precio, ArrayList<Punto> listaVertices, String temporada, boolean autor) {
         this.material = material;
         this.precio = precio;
         this.color = "gris";
         this.listaVertices = listaVertices;
         this.suplemento=0f;
-        this.coloreado=false;
+        this.autor=autor;
         this.temporada = temporada;
     }
 
 
-    public Poligono(EnumMateriales material, float precio, String temporada) {
+    public Poligono(EnumMateriales material, float precio, String temporada, boolean autor) {
         this.material = material;
         this.precio = precio;
         this.color = "gris";
         this.listaVertices = new ArrayList<>();
         this.suplemento=0f;
-        this.coloreado=false;
+        this.autor=autor;
         this.temporada = temporada;
     }
 
     public Poligono() {
         this.listaVertices = new ArrayList<>();
         this.color="gris";
-        this.coloreado=false;
+        this.autor=false;
+    }
+
+    public boolean isAutor() {
+        return autor;
+    }
+
+    public void setAutor(boolean autor) {
+        this.autor = autor;
     }
 
     public void setMaterial(EnumMateriales material) {

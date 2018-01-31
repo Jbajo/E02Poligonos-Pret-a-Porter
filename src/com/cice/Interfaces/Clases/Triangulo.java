@@ -1,4 +1,4 @@
-package com.cice.modelo;
+package com.cice.Interfaces.Clases;
 
 import com.cice.Interfaces.EnumMateriales;
 
@@ -12,24 +12,26 @@ public class Triangulo extends Poligono {
         this.setSuplemento(0);
     }
 
-    public Triangulo(EnumMateriales material, float precio, String temporada) {
-        super(material, precio, temporada);
+    public Triangulo(EnumMateriales material, float precio, String temporada, boolean autor) {
+        super(material, precio, temporada, autor);
     }
 
     @Override
     public void coloreaPoligono(String color) {
-        this.color = color;
-        this.setSuplemento(0.15f);
-        this.precio *= (1 + this.suplemento);
-        this.coloreado = true;
+        this.setColor(color);
+        if(this.isAutor())
+            this.setSuplemento(0.20f);
+        else
+            this.setSuplemento(0.15f);
+        this.setPrecio(this.getPrecio()* (1 + this.getSuplemento()));
     }
 
     @Override
     public void quitaColorPoligono() {
-        this.coloreado = false;
-        this.precio /= (1 + this.suplemento);
-        this.suplemento = 0;
-        this.color = "gris";
+        this.setColor("gris");
+        this.setSuplemento(0f);
+        this.setPrecio(this.getPrecio()/ (1 + this.getSuplemento()));
+        this.setAutor(false);
     }
     @Override
     public String toString() {
