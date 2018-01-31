@@ -117,7 +117,7 @@ public class Empresa {
      * Método materialCuadrilatero solicita el material del Cuadrilatero al Usuario
      */
 
-    public void materialCuadrilatero(){
+    private void materialCuadrilatero(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
 
@@ -136,9 +136,7 @@ public class Empresa {
      */
     private void crearCuadrilatero (int opcion){
         IPoligono poligono;
-        Scanner sc = new Scanner (System.in);
-        String aux="1";
-        float x,y;
+
 
         poligono = new Cuadrilatero();
         switch (opcion) {
@@ -166,33 +164,17 @@ public class Empresa {
             default:
                 break;
         }
-        for (int i = 0; i < 4 ; i++){
+        poligonoAniadirCoodenada(poligono, 4);
 
-            do {
-                do {
-                    if(!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"))
-                        System.out.println("No es numero valido");
-                    System.out.println("Introduzca la Coordenada X numero --> " + i);
-                    aux = sc.nextLine();
-                }while (!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"));
-                x = Float.parseFloat(aux);
-                do {
-                    if(!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"))
-                        System.out.println("No es numero valido");
-                    System.out.println("Introduzca la Coordenada Y numero --> " + i);
-                    aux = sc.nextLine();
-                }while (!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"));
-                y = Float.parseFloat(aux);
-            }while(poligono.aniadirCoordenada(x,y)==false);
-        }
         listaPoligonos.add((Poligono)poligono);
 
         }
+
     /**
      * Método materialTriangulo solicita el material del Triangulo al Usuario
      */
 
-    public void materialTriangulo(){
+    private void materialTriangulo(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
 
@@ -241,25 +223,8 @@ public class Empresa {
             default:
                 break;
         }
-        for (int i = 0; i < 3 ; i++){
 
-            do {
-                do {
-                    if(!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"))
-                        System.out.println("No es numero valido");
-                    System.out.println("Introduzca la Coordenada X numero --> " + i);
-                    aux = sc.nextLine();
-                }while (!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"));
-                x = Float.parseFloat(aux);
-                do {
-                    if(!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"))
-                        System.out.println("No es numero valido");
-                    System.out.println("Introduzca la Coordenada Y numero --> " + i);
-                    aux = sc.nextLine();
-                }while (!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"));
-                y = Float.parseFloat(aux);
-            }while(poligono.aniadirCoordenada(x,y)==false);
-        }
+        poligonoAniadirCoodenada(poligono, 3);
         listaPoligonos.add((Poligono)poligono);
 
     }
@@ -268,7 +233,7 @@ public class Empresa {
      * Método materialPentagono solicita el material del Pentagono al Usuario
      */
 
-    public void materialPentagono(){
+    private void materialPentagono(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
 
@@ -317,25 +282,7 @@ public class Empresa {
             default:
                 break;
         }
-        for (int i = 0; i < 5 ; i++){
-
-            do {
-                do {
-                    if(!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"))
-                        System.out.println("No es numero valido");
-                    System.out.println("Introduzca la Coordenada X numero --> " + i);
-                    aux = sc.nextLine();
-                }while (!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"));
-                x = Float.parseFloat(aux);
-                do {
-                    if(!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"))
-                        System.out.println("No es numero valido");
-                    System.out.println("Introduzca la Coordenada Y numero --> " + i);
-                    aux = sc.nextLine();
-                }while (!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"));
-                y = Float.parseFloat(aux);
-            }while(poligono.aniadirCoordenada(x,y)==false);
-        }
+        poligonoAniadirCoodenada(poligono,5 );
         listaPoligonos.add((Poligono)poligono);
 
     }
@@ -343,7 +290,7 @@ public class Empresa {
     /**
      * Método materialHexagono solicita el material del Hexagono al Usuario
      */
-    public void materialHexagono(){
+    private void materialHexagono(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
 
@@ -393,37 +340,44 @@ public class Empresa {
             default:
                 break;
         }
-        for (int i = 0; i < 6 ; i++){
-
-            do {
-                do {
-                    if(!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"))
-                        System.out.println("No es numero valido");
-                    System.out.println("Introduzca la Coordenada X numero --> " + i);
-                    aux = sc.nextLine();
-                }while (!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"));
-                x = Float.parseFloat(aux);
-                do {
-                    if(!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"))
-                        System.out.println("No es numero valido");
-                    System.out.println("Introduzca la Coordenada Y numero --> " + i);
-                    aux = sc.nextLine();
-                }while (!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"));
-                y = Float.parseFloat(aux);
-            }while(poligono.aniadirCoordenada(x,y)==false);
-        }
+        poligonoAniadirCoodenada(poligono,6 );
         listaPoligonos.add((Poligono)poligono);
 
     }
 
 
+    private void poligonoAniadirCoodenada(IPoligono poligono, int lados) {
+        Scanner sc = new Scanner (System.in);
+        String aux="1";
+        float x,y;
 
+        for (int i = 0; i < lados ; i++) {
+
+            do {
+                do {
+                    if (!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"))
+                        System.out.println("No es numero valido");
+                    System.out.println("Introduzca la Coordenada X numero --> " + i);
+                    aux = sc.nextLine();
+                } while (!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"));
+                x = Float.parseFloat(aux);
+                do {
+                    if (!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"))
+                        System.out.println("No es numero valido");
+                    System.out.println("Introduzca la Coordenada Y numero --> " + i);
+                    aux = sc.nextLine();
+                } while (!aux.matches("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"));
+                y = Float.parseFloat(aux);
+            } while (poligono.aniadirCoordenada(x, y) == false);
+        }
+
+    }
 
     /**
      * Método mostrarPolígonos muestra los Polígonos de la listaPoligonos
      */
 
-    public void mostrarPoligonos(){
+    private void mostrarPoligonos(){
      int i = 0;
         for(Poligono poligono : listaPoligonos){
             System.out.println(i+1 +") " + poligono.toString());
@@ -434,7 +388,7 @@ public class Empresa {
     /**
      * Méotdo coloreaPoligono colorea un Polígono seleccionado de la listaPoligonos
      */
-    public void coloreaPoligono(){
+    private void coloreaPoligono(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
         String aux = "gris";
@@ -462,7 +416,7 @@ public class Empresa {
         }
     }
 
-    public void descoloreaPoligono(){
+    private void descoloreaPoligono(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
 
@@ -481,7 +435,7 @@ public class Empresa {
     /**
      * Método eliminarPoligono elimina un Polígono seleccionado
      */
-    public void eliminaPoligono(){
+    private void eliminaPoligono(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
         if(listaPoligonos.size()>0) {
