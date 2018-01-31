@@ -4,17 +4,17 @@ package com.cice.Interfaces;
  * @author Javier Bajo Chacon  javier.bajochacon@gmail.com
  */
 public enum EnumMateriales {
-    CARTON(100d),
-    PLASTICO(300d),
-    MADERA(500d);
+    CARTON(100f),
+    PLASTICO(300f),
+    MADERA(500f);
 
-    private double precio;
+    private float precio;
 
-    EnumMateriales(double precio) {
+    EnumMateriales(float precio) {
         this.precio = precio;
     }
 
-    public double getPrecio() {
+    public float getPrecio() {
         return precio;
     }
 }

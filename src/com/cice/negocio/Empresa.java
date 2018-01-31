@@ -151,7 +151,7 @@ public class Empresa {
             case 1:
 
                 cuadrilatero.setMaterial(EnumMateriales.CARTON);
-                cuadrilatero.setPrecio(100);
+                cuadrilatero.setPrecio(EnumMateriales.CARTON.getPrecio());
                 cuadrilatero.setColor("gris");
                 cuadrilatero.setTemporada("primavera-verano");
                 cuadrilatero.setAutor(autor);
@@ -159,7 +159,7 @@ public class Empresa {
             case 2:
 
                 cuadrilatero.setMaterial(EnumMateriales.PLASTICO);
-                cuadrilatero.setPrecio(300);
+                cuadrilatero.setPrecio(EnumMateriales.PLASTICO.getPrecio());
                 cuadrilatero.setColor("gris");
                 cuadrilatero.setTemporada("primavera-verano");
                 cuadrilatero.setAutor(autor);
@@ -167,7 +167,7 @@ public class Empresa {
             case 3:
 
                 cuadrilatero.setMaterial(EnumMateriales.MADERA);
-                cuadrilatero.setPrecio(500);
+                cuadrilatero.setPrecio(EnumMateriales.MADERA.getPrecio());
                 cuadrilatero.setColor("gris");
                 cuadrilatero.setTemporada("primavera-verano");
                 cuadrilatero.setAutor(autor);
@@ -218,7 +218,7 @@ public class Empresa {
             case 1:
 
                 triangulo.setMaterial(EnumMateriales.CARTON);
-                triangulo.setPrecio(100);
+                triangulo.setPrecio(EnumMateriales.CARTON.getPrecio());
                 triangulo.setColor("gris");
                 triangulo.setTemporada("primavera-verano");
                 triangulo.setAutor(autor);
@@ -226,7 +226,7 @@ public class Empresa {
             case 2:
 
                 triangulo.setMaterial(EnumMateriales.PLASTICO);
-                triangulo.setPrecio(300);
+                triangulo.setPrecio(EnumMateriales.PLASTICO.getPrecio());
                 triangulo.setColor("gris");
                 triangulo.setTemporada("primavera-verano");
                 triangulo.setAutor(autor);
@@ -234,7 +234,7 @@ public class Empresa {
             case 3:
 
                 triangulo.setMaterial(EnumMateriales.MADERA);
-                triangulo.setPrecio(500);
+                triangulo.setPrecio(EnumMateriales.MADERA.getPrecio());
                 triangulo.setColor("gris");
                 triangulo.setTemporada("primavera-verano");
                 triangulo.setAutor(autor);
@@ -286,7 +286,7 @@ public class Empresa {
             case 1:
 
                 pentagono.setMaterial(EnumMateriales.CARTON);
-                pentagono.setPrecio(100);
+                pentagono.setPrecio(EnumMateriales.CARTON.getPrecio());
                 pentagono.setColor("gris");
                 pentagono.setTemporada("primavera-verano");
                 pentagono.setAutor(autor);
@@ -294,7 +294,7 @@ public class Empresa {
             case 2:
 
                 pentagono.setMaterial(EnumMateriales.PLASTICO);
-                pentagono.setPrecio(300);
+                pentagono.setPrecio(EnumMateriales.PLASTICO.getPrecio());
                 pentagono.setColor("gris");
                 pentagono.setTemporada("primavera-verano");
                 pentagono.setAutor(autor);
@@ -302,7 +302,7 @@ public class Empresa {
             case 3:
 
                 pentagono.setMaterial(EnumMateriales.MADERA);
-                pentagono.setPrecio(500);
+                pentagono.setPrecio(EnumMateriales.MADERA.getPrecio());
                 pentagono.setColor("gris");
                 pentagono.setTemporada("primavera-verano");
                 pentagono.setAutor(autor);
@@ -354,7 +354,7 @@ public class Empresa {
             case 1:
 
                 hexagono.setMaterial(EnumMateriales.CARTON);
-                hexagono.setPrecio(100);
+                hexagono.setPrecio(EnumMateriales.CARTON.getPrecio());
                 hexagono.setColor("gris");
                 hexagono.setTemporada("primavera-verano");
                 hexagono.setAutor(autor);
@@ -362,7 +362,7 @@ public class Empresa {
             case 2:
 
                 hexagono.setMaterial(EnumMateriales.PLASTICO);
-                hexagono.setPrecio(300);
+                hexagono.setPrecio(EnumMateriales.PLASTICO.getPrecio());
                 hexagono.setColor("gris");
                 hexagono.setTemporada("primavera-verano");
                 hexagono.setAutor(autor);
@@ -370,7 +370,7 @@ public class Empresa {
             case 3:
 
                 hexagono.setMaterial(EnumMateriales.MADERA);
-                hexagono.setPrecio(500);
+                hexagono.setPrecio(EnumMateriales.MADERA.getPrecio());
                 hexagono.setColor("gris");
                 hexagono.setTemporada("primavera-verano");
                 hexagono.setAutor(autor);
