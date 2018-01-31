@@ -87,7 +87,7 @@ public class Empresa {
 
     /**
      * Método crearPolígono crea un Polígono de un tipo pidiendo sus Coordenadas
-     * @param tipo del poligono c, m o p según sea de cartón, madera o plástico
+     * @param tipo del poligono c, t, p o h según sea triangulo, cuadrilatero, pentagono o hexagono
      */
     private void crearPoligono(char tipo){
 
