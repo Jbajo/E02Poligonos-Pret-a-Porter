@@ -1,5 +1,8 @@
 package com.cice.modelo;
 
+import com.cice.Interfaces.EnumMateriales;
+import com.cice.Interfaces.IPoligono;
+
 import java.util.ArrayList;
 
 /**
@@ -8,20 +11,33 @@ import java.util.ArrayList;
  * E02Poligon-pret-a-porter
  */
 public abstract class Poligono implements IPoligono {
-    protected String material;
+    protected EnumMateriales material;
     protected String color;
     protected float precio;
     protected ArrayList<Punto> listaVertices;
     protected float suplemento;
     protected boolean coloreado;
+    protected String temporada;
 
-    public Poligono(String material, float precio, ArrayList<Punto> listaVertices) {
+    public Poligono(EnumMateriales material, float precio, ArrayList<Punto> listaVertices, String temporada) {
         this.material = material;
         this.precio = precio;
         this.color = "gris";
         this.listaVertices = listaVertices;
         this.suplemento=0f;
         this.coloreado=false;
+        this.temporada = temporada;
+    }
+
+
+    public Poligono(EnumMateriales material, float precio, String temporada) {
+        this.material = material;
+        this.precio = precio;
+        this.color = "gris";
+        this.listaVertices = new ArrayList<>();
+        this.suplemento=0f;
+        this.coloreado=false;
+        this.temporada = temporada;
     }
 
     public Poligono() {
@@ -30,7 +46,7 @@ public abstract class Poligono implements IPoligono {
         this.coloreado=false;
     }
 
-    public void setMaterial(String material) {
+    public void setMaterial(EnumMateriales material) {
         this.material = material;
     }
 
@@ -47,9 +63,17 @@ public abstract class Poligono implements IPoligono {
     }
 
 
-    public String getMaterial(){
+    public EnumMateriales getMaterial(){
         return this.material;
 
+    }
+
+    public String getTemporada() {
+        return temporada;
+    }
+
+    public void setTemporada(String temporada) {
+        this.temporada = temporada;
     }
 
     public float getSuplemento() {

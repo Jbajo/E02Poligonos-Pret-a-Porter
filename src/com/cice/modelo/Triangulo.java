@@ -1,5 +1,7 @@
 package com.cice.modelo;
 
+import com.cice.Interfaces.EnumMateriales;
+
 /**
  * @author Javier Bajo Chacon  javier.bajochacon@gmail.com
  */
@@ -10,16 +12,9 @@ public class Triangulo extends Poligono {
         this.setSuplemento(0);
     }
 
-    @Override
-    public void setMaterial(String material) {
-        super.setMaterial(material);
+    public Triangulo(EnumMateriales material, float precio, String temporada) {
+        super(material, precio, temporada);
     }
-
-    @Override
-    public void setPrecio(float precio) {
-        super.setPrecio(precio);
-    }
-
 
     @Override
     public void coloreaPoligono(String color) {

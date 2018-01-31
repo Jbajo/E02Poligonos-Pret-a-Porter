@@ -1,5 +1,7 @@
 package com.cice.modelo;
 
+import com.cice.Interfaces.EnumMateriales;
+
 /**
  * @author Javier Bajo Chacon  javier.bajochacon@gmail.com
  */
@@ -10,16 +12,9 @@ public class Hexagono extends Poligono{
         this.setSuplemento(0);
     }
 
-    @Override
-    public void setMaterial(String material) {
-        super.setMaterial(material);
+    public Hexagono(EnumMateriales material, float precio, String temporada) {
+        super(material, precio, temporada);
     }
-
-    @Override
-    public void setPrecio(float precio) {
-        super.setPrecio(precio);
-    }
-
     @Override
     public void coloreaPoligono(String color) {
         this.color = color;
@@ -35,14 +30,15 @@ public class Hexagono extends Poligono{
         this.suplemento = 0;
         this.color = "gris";
     }
-
     @Override
     public String toString() {
-        return "Hexagono{" +
+        return "Triangulo{" +
                 "material=" + material + '\'' +
                 ", color='" + color + '\'' +
                 ", precio=" + precio +'\'' +
                 ", suplemento=" + suplemento + "}";
     }
+
+
 
 }

@@ -1,5 +1,7 @@
 package com.cice.negocio;
 
+import com.cice.Interfaces.EnumMateriales;
+import com.cice.Interfaces.IPoligono;
 import com.cice.modelo.*;
 
 import java.util.ArrayList;
@@ -73,7 +75,7 @@ public class Empresa {
                 break;
             case 7:
                 //elimina el color de un Poligono
-                descoloreaPoligono();
+                eliminaColorPoligono();
                 break;
             case 8:
                 //elimina Poligono
@@ -137,29 +139,28 @@ public class Empresa {
     private void crearCuadrilatero (int opcion){
         IPoligono poligono;
 
-
         poligono = new Cuadrilatero();
         switch (opcion) {
             case 1:
 
-                ((Cuadrilatero) poligono).setMaterial("Carton");
+                ((Cuadrilatero) poligono).setMaterial(EnumMateriales.CARTON);
                 ((Cuadrilatero) poligono).setPrecio(100);
                 ((Cuadrilatero) poligono).setColor("gris");
-
+                ((Poligono) poligono).setTemporada("primavera-verano");
                 break;
             case 2:
 
-                ((Cuadrilatero) poligono).setMaterial("Plastico");
+                ((Cuadrilatero) poligono).setMaterial(EnumMateriales.PLASTICO);
                 ((Cuadrilatero) poligono).setPrecio(300);
                 ((Cuadrilatero) poligono).setColor("gris");
-
+                ((Poligono) poligono).setTemporada("primavera-verano");
                 break;
             case 3:
 
-                ((Cuadrilatero) poligono).setMaterial("Madera");
+                ((Cuadrilatero) poligono).setMaterial(EnumMateriales.MADERA);
                 ((Cuadrilatero) poligono).setPrecio(500);
                 ((Cuadrilatero) poligono).setColor("gris");
-
+                ((Poligono) poligono).setTemporada("primavera-verano");
                 break;
             default:
                 break;
@@ -201,23 +202,24 @@ public class Empresa {
         switch (opcion) {
             case 1:
 
-                ((Triangulo) poligono).setMaterial("Carton");
+                ((Triangulo) poligono).setMaterial(EnumMateriales.CARTON);
                 ((Triangulo) poligono).setPrecio(100);
                 ((Triangulo) poligono).setColor("gris");
-
+                ((Poligono) poligono).setTemporada("primavera-verano");
                 break;
             case 2:
 
-                ((Triangulo) poligono).setMaterial("Plastico");
+                ((Triangulo) poligono).setMaterial(EnumMateriales.PLASTICO);
                 ((Triangulo) poligono).setPrecio(300);
                 ((Triangulo) poligono).setColor("gris");
-
+                ((Poligono) poligono).setTemporada("primavera-verano");
                 break;
             case 3:
 
-                ((Triangulo) poligono).setMaterial("Madera");
+                ((Triangulo) poligono).setMaterial(EnumMateriales.MADERA);
                 ((Triangulo) poligono).setPrecio(500);
                 ((Triangulo) poligono).setColor("gris");
+                ((Poligono) poligono).setTemporada("primavera-verano");
 
                 break;
             default:
@@ -260,23 +262,24 @@ public class Empresa {
         switch (opcion) {
             case 1:
 
-                ((Pentagono) poligono).setMaterial("Carton");
+                ((Pentagono) poligono).setMaterial(EnumMateriales.CARTON);
                 ((Pentagono) poligono).setPrecio(100);
                 ((Pentagono) poligono).setColor("gris");
-
+                ((Poligono) poligono).setTemporada("primavera-verano");
                 break;
             case 2:
 
-                ((Pentagono) poligono).setMaterial("Plastico");
+                ((Pentagono) poligono).setMaterial(EnumMateriales.PLASTICO);
                 ((Pentagono) poligono).setPrecio(300);
                 ((Pentagono) poligono).setColor("gris");
-
+                ((Poligono) poligono).setTemporada("primavera-verano");
                 break;
             case 3:
 
-                ((Pentagono) poligono).setMaterial("Madera");
+                ((Pentagono) poligono).setMaterial(EnumMateriales.MADERA);
                 ((Pentagono) poligono).setPrecio(500);
                 ((Pentagono) poligono).setColor("gris");
+                ((Poligono) poligono).setTemporada("primavera-verano");
 
                 break;
             default:
@@ -318,23 +321,24 @@ public class Empresa {
         switch (opcion) {
             case 1:
 
-                (( Hexagono) poligono).setMaterial("Carton");
+                (( Hexagono) poligono).setMaterial(EnumMateriales.CARTON);
                 (( Hexagono) poligono).setPrecio(100);
                 (( Hexagono) poligono).setColor("gris");
-
+                ((Poligono) poligono).setTemporada("primavera-verano");
                 break;
             case 2:
 
-                (( Hexagono) poligono).setMaterial("Plastico");
+                (( Hexagono) poligono).setMaterial(EnumMateriales.PLASTICO);
                 (( Hexagono) poligono).setPrecio(300);
                 (( Hexagono) poligono).setColor("gris");
-
+                ((Poligono) poligono).setTemporada("primavera-verano");
                 break;
             case 3:
 
-                (( Hexagono) poligono).setMaterial("Madera");
+                (( Hexagono) poligono).setMaterial(EnumMateriales.MADERA);
                 (( Hexagono) poligono).setPrecio(500);
                 (( Hexagono) poligono).setColor("gris");
+                ((Poligono) poligono).setTemporada("primavera-verano");
 
                 break;
             default:
@@ -416,7 +420,10 @@ public class Empresa {
         }
     }
 
-    private void descoloreaPoligono(){
+    /**
+     * Método eliminaColorPoligono elimina el Color de un Poligono y su suplemento
+     */
+    private void eliminaColorPoligono(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
 

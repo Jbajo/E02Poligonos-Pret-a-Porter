@@ -1,5 +1,7 @@
 package com.cice.modelo;
 
+import com.cice.Interfaces.EnumMateriales;
+
 /**
  * @author Javier Bajo Chacon  javier.bajochacon@gmail.com
  */
@@ -9,16 +11,10 @@ public class Pentagono extends Poligono {
         super();
         this.setSuplemento(0);
     }
-    @Override
-    public void setMaterial(String material) {
-        super.setMaterial(material);
-    }
 
-    @Override
-    public void setPrecio(float precio) {
-        super.setPrecio(precio);
+    public Pentagono(EnumMateriales material, float precio, String temporada) {
+        super(material, precio, temporada);
     }
-
     @Override
     public void coloreaPoligono(String color) {
         this.color = color;

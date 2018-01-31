@@ -1,5 +1,9 @@
 package com.cice.modelo;
 
+import com.cice.Interfaces.EnumMateriales;
+
+import java.util.ArrayList;
+
 /**
  * @author Javier Bajo Chacon  javier.bajochacon@gmail.com
  */
@@ -10,14 +14,8 @@ public class Cuadrilatero extends Poligono {
         this.setSuplemento(0);
     }
 
-    @Override
-    public void setMaterial(String material) {
-        super.setMaterial(material);
-    }
-
-    @Override
-    public void setPrecio(float precio) {
-        super.setPrecio(precio);
+    public Cuadrilatero(EnumMateriales material, float precio, String temporada) {
+        super(material, precio, temporada);
     }
 
     @Override
