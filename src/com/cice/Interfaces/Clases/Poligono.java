@@ -114,14 +114,6 @@ public abstract class Poligono implements IPoligono {
         this.listaVertices = listaVertices;
     }
 
-    public int devuelveVertices(){
-        int i = 0;
-        for(Punto p : listaVertices){
-            i++;
-        }
-        return i;
-    }
-
     public boolean aniadirCoordenada (float x, float y){
         if(listaVertices.size()>0) {
             for (Punto punto : listaVertices) {
