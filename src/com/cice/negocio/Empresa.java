@@ -142,6 +142,7 @@ public class Empresa {
     /**
      * Método crearCuadrilatero crea un Cuadrilatero según el tipo seleccionado
      * @param opcion tipo de Cuadrilatero seleccionado
+     * @param autor indica si el poligono es o no de autor
      */
     private void fabricarCuadrilatero (int opcion, boolean autor){
         Cuadrilatero cuadrilatero = new Cuadrilatero();
@@ -208,6 +209,7 @@ public class Empresa {
     /**
      * Método fabricarTriangulo crea un Triangulo según el tipo seleccionado
      * @param opcion tipo de Triangulo seleccionado
+     * @param autor indica si el poligono es o no de autor
      */
 
     private void fabricarTriangulo (int opcion, boolean autor){
@@ -277,6 +279,7 @@ public class Empresa {
     /**
      * Método fabricarPentagono crea un Pentagono según el tipo seleccionado
      * @param opcion tipo de Pentagono seleccionado
+     * @param autor indica si el poligono es o no de autor
      */
     private void fabricarPentagono(int opcion, boolean autor){
         Pentagono pentagono = new Pentagono();
@@ -344,6 +347,7 @@ public class Empresa {
     /**
      * Método fabricarHexagono crea un Hexagono según el tipo seleccionado
      * @param opcion tipo de Hexagono seleccionado
+     * @param autor indica si el poligono es o no de autor
      */
 
     private void fabricarHexagono(int opcion, boolean autor){
