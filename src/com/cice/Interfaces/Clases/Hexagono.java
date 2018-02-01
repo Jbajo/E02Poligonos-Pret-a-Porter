@@ -28,8 +28,6 @@ public class Hexagono extends Poligono{
         }
     }
 
-
-
     @Override
     public void quitaColorPoligono() {
         this.setColor("gris");        ;
