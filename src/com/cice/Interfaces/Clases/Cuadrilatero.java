@@ -12,18 +12,27 @@ public class Cuadrilatero extends Poligono {
         this.setSuplemento(0);
     }
 
-    public Cuadrilatero(EnumMateriales material, float precio, String temporada, boolean autor) {
-        super(material, precio, temporada, autor);
+    public Cuadrilatero(EnumMateriales material, String temporada, boolean autor) {
+        super(material, temporada, autor);
     }
+
 
     @Override
     public void coloreaPoligono(String color) {
-        this.setColor(color);
-        if(this.isAutor())
-            this.setSuplemento(0.20f);
-        else
-            this.setSuplemento(0.15f);
-        this.setPrecio(this.getPrecio()* (1 + this.getSuplemento()));
+        if(this.getColor().equals("gris")) {
+            if (this.isAutor())
+                this.setSuplemento(0.20f);
+            else
+                this.setSuplemento(0.15f);
+            this.setPrecio(this.getPrecio() * (1 + this.getSuplemento()));
+            this.setColor(color);
+        }
+    }
+    @Override
+    public void quitaColorPoligono() {
+        this.setColor("gris");        ;
+        this.setPrecio(this.getPrecio()/ (1 + this.getSuplemento()));
+        this.setSuplemento(0f);
     }
 
 

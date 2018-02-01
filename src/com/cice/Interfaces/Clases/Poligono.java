@@ -20,9 +20,9 @@ public abstract class Poligono implements IPoligono {
     private boolean autor;
 
 
-    public Poligono(EnumMateriales material, float precio, ArrayList<Punto> listaVertices, String temporada, boolean autor) {
+    public Poligono(EnumMateriales material, ArrayList<Punto> listaVertices, String temporada, boolean autor) {
         this.material = material;
-        this.precio = precio;
+        this.precio = material.getPrecio();
         this.color = "gris";
         this.listaVertices = listaVertices;
         this.suplemento=0f;
@@ -31,9 +31,9 @@ public abstract class Poligono implements IPoligono {
     }
 
 
-    public Poligono(EnumMateriales material, float precio, String temporada, boolean autor) {
+    public Poligono(EnumMateriales material, String temporada, boolean autor) {
         this.material = material;
-        this.precio = precio;
+        this.precio = material.getPrecio();
         this.color = "gris";
         this.listaVertices = new ArrayList<>();
         this.suplemento=0f;

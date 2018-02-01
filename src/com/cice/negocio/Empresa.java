@@ -445,10 +445,6 @@ public class Empresa {
                     opcion--;
             } while (opcion < 0 || opcion > listaPoligonos.size());
             System.out.println("Introduzca un color para el Poligono...");
-             if(listaPoligonos.get(opcion).devuelveVertices()==5 && listaPoligonos.get(opcion).getColor().equals("gris") ) //Caso Pentagono Coloreado
-                listaPoligonos.get(opcion).setSuplemento(0.20f);
-             else if (listaPoligonos.get(opcion).getSuplemento()!=0)
-                 System.out.println("Este Poligono ya tiene aplicado el Suplemento");
             do {
                 if (!aux.matches("[a-zA-Z]+")) {
                     System.out.println("Color erroneo");
