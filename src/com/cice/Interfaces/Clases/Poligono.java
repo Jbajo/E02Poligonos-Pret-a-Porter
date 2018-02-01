@@ -22,7 +22,7 @@ public abstract class Poligono implements IPoligono {
     private boolean autor;
 
 
-    public Poligono(EnumMateriales material, EnumDisenio disenio, ArrayList<Punto> listaVertices, String temporada, boolean autor) {
+    protected Poligono(EnumMateriales material, EnumDisenio disenio, ArrayList<Punto> listaVertices, String temporada, boolean autor) {
         this.material = material;
         this.disenio=disenio;
         this.precio = material.getPrecio();
@@ -34,7 +34,7 @@ public abstract class Poligono implements IPoligono {
     }
 
 
-    public Poligono(EnumMateriales material, EnumDisenio disenio, String temporada, boolean autor) {
+    protected Poligono(EnumMateriales material, EnumDisenio disenio, String temporada, boolean autor) {
         this.material = material;
         this.disenio=disenio;
         this.precio = material.getPrecio();
