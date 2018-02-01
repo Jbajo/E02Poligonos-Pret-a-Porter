@@ -192,7 +192,6 @@ public class Empresa {
         else
             cuadrilatero.setDisenio(EnumDisenio.ESTAMPADO);
         poligonoAniadirCoodenada(cuadrilatero, 4);
-
         listaPoligonos.add(cuadrilatero);
 
         }
@@ -268,11 +267,11 @@ public class Empresa {
         if (opcion2==0)
             triangulo.setDisenio(EnumDisenio.BASICO);
 
-            else if (opcion2 ==1)
+        else if (opcion2 ==1)
             triangulo.setDisenio(EnumDisenio.COLOREADO);
-                else if (opcion2 ==2)
+        else if (opcion2 ==2)
             triangulo.setDisenio(EnumDisenio.DEAUTOR);
-                    else
+        else
             triangulo.setDisenio(EnumDisenio.ESTAMPADO);
 
         poligonoAniadirCoodenada(triangulo, 4);
