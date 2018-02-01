@@ -28,11 +28,12 @@ public class Cuadrilatero extends Poligono {
 
 
     @Override
-    public void quitaColorPoligono() {
-        this.setColor("gris");
-        this.setSuplemento(0f);
-        this.setPrecio(this.getPrecio()/ (1 + this.getSuplemento()));
-        this.setAutor(false);
+    public String toString() {
+        return "Cuadrilatero{" +
+                "material=" + this.getMaterial() + '\'' +
+                ", color='" + this.getColor() + '\'' +
+                ", precio=" + this.getPrecio() +'\'' +
+                ", suplemento=" + this.getSuplemento() + "}";
     }
 
 }

@@ -36,10 +36,10 @@ public class Triangulo extends Poligono {
     @Override
     public String toString() {
         return "Triangulo{" +
-                "material=" + material + '\'' +
-                ", color='" + color + '\'' +
-                ", precio=" + precio +'\'' +
-                ", suplemento=" + suplemento + "}";
+                "material=" + this.getMaterial() + '\'' +
+                ", color='" + this.getColor() + '\'' +
+                ", precio=" + this.getPrecio() +'\'' +
+                ", suplemento=" + this.getSuplemento() + "}";
     }
 
 

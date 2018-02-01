@@ -36,10 +36,10 @@ public class Pentagono extends Poligono {
     @Override
     public String toString() {
         return "Pentagono{" +
-                "material=" + material + '\'' +
-                ", color='" + color + '\'' +
-                ", precio=" + precio +'\'' +
-                ", suplemento=" + suplemento + "}";
+                "material=" + this.getMaterial() + '\'' +
+                ", color='" + this.getColor() + '\'' +
+                ", precio=" + this.getPrecio() + '\'' +
+                ", suplemento=" + this.getSuplemento() + "}";
     }
 
 }

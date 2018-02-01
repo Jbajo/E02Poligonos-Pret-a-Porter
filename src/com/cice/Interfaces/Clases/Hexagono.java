@@ -35,11 +35,11 @@ public class Hexagono extends Poligono{
     }
     @Override
     public String toString() {
-        return "Triangulo{" +
-                "material=" + material + '\'' +
-                ", color='" + color + '\'' +
-                ", precio=" + precio +'\'' +
-                ", suplemento=" + suplemento + "}";
+        return "Hexagono{" +
+                "material=" + this.getMaterial() + '\'' +
+                ", color='" + this.getColor() + '\'' +
+                ", precio=" + this.getPrecio() +'\'' +
+                ", suplemento=" + this.getSuplemento() + "}";
     }
 
 

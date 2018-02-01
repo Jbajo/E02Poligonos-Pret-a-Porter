@@ -11,13 +11,13 @@ import java.util.ArrayList;
  * E02Poligon-pret-a-porter
  */
 public abstract class Poligono implements IPoligono {
-    protected EnumMateriales material;
-    protected String color;
-    protected float precio;
+    private EnumMateriales material;
+    private String color;
+    private float precio;
     private ArrayList<Punto> listaVertices;
-    protected float suplemento;
-    protected String temporada;
-    protected boolean autor;
+    private float suplemento;
+    private String temporada;
+    private boolean autor;
 
 
     public Poligono(EnumMateriales material, float precio, ArrayList<Punto> listaVertices, String temporada, boolean autor) {
