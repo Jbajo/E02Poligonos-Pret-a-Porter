@@ -42,5 +42,13 @@ public class Triangulo extends Poligono {
                 ", suplemento=" + this.getSuplemento() + "}";
     }
 
+    @Override
+    public void mostrarPrecio() {
 
+    }
+
+    @Override
+    public void descripcionProducto() {
+
+    }
 }

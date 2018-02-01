@@ -6,7 +6,7 @@ package com.cice.enums;
 public enum EnumDisenio {
     BASICO(1.0f),
     COLOREADO(1.15f),
-    DEAUTOR(1.20f),
+    COLOREADODEAUTOR(1.20f),
     ESTAMPADO(1.17f);
 
     private float incremento;

@@ -42,5 +42,14 @@ public class Pentagono extends Poligono {
                 ", precio=" + this.getPrecio() + '\'' +
                 ", suplemento=" + this.getSuplemento() + "}";
     }
+    @Override
+    public void mostrarPrecio() {
+
+    }
+
+    @Override
+    public void descripcionProducto() {
+
+    }
 
 }

@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class Empresa {
 
-    private ArrayList<Poligono> listaPoligonos= new ArrayList <>();
+    private ArrayList<IPoligono> listaPoligonos= new ArrayList <IPoligono>();
 
     /**
      * Método showMenu muestra el menú de la aplicación
@@ -188,7 +188,7 @@ public class Empresa {
         else if (opcion2 ==1)
             cuadrilatero.setDisenio(EnumDisenio.COLOREADO);
         else if (opcion2 ==2)
-            cuadrilatero.setDisenio(EnumDisenio.DEAUTOR);
+            cuadrilatero.setDisenio(EnumDisenio.COLOREADODEAUTOR);
         else
             cuadrilatero.setDisenio(EnumDisenio.ESTAMPADO);
         poligonoAniadirCoodenada(cuadrilatero, 4);
@@ -270,7 +270,7 @@ public class Empresa {
         else if (opcion2 ==1)
             triangulo.setDisenio(EnumDisenio.COLOREADO);
         else if (opcion2 ==2)
-            triangulo.setDisenio(EnumDisenio.DEAUTOR);
+            triangulo.setDisenio(EnumDisenio.COLOREADODEAUTOR);
         else
             triangulo.setDisenio(EnumDisenio.ESTAMPADO);
 
@@ -356,7 +356,7 @@ public class Empresa {
         else if (opcion2 ==1)
             pentagono.setDisenio(EnumDisenio.COLOREADO);
         else if (opcion2 ==2)
-            pentagono.setDisenio(EnumDisenio.DEAUTOR);
+            pentagono.setDisenio(EnumDisenio.COLOREADODEAUTOR);
         else
            pentagono.setDisenio(EnumDisenio.ESTAMPADO);
         poligonoAniadirCoodenada(pentagono, 4);
@@ -439,7 +439,7 @@ public class Empresa {
         else if (opcion2 ==1)
             hexagono.setDisenio(EnumDisenio.COLOREADO);
         else if (opcion2 ==2)
-            hexagono.setDisenio(EnumDisenio.DEAUTOR);
+            hexagono.setDisenio(EnumDisenio.COLOREADODEAUTOR);
         else
             hexagono.setDisenio(EnumDisenio.ESTAMPADO);
 
@@ -484,7 +484,7 @@ public class Empresa {
 
     private void mostrarPoligonos(){
      int i = 0;
-        for(Poligono poligono : listaPoligonos){
+        for(IPoligono poligono : listaPoligonos){
             System.out.println(i+1 +") " + poligono.toString());
             i++;
         }

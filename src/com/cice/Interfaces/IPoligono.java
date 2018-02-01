@@ -8,6 +8,8 @@ package com.cice.Interfaces;
 public interface IPoligono {
 
     void coloreaPoligono(String color);
+    void mostrarPrecio();
+    void descripcionProducto();
 
     default void quitaColorPoligono(){
       System.out.println("Vamos a colorear el Poligono");
@@ -17,5 +19,7 @@ public interface IPoligono {
         System.out.println("Coordenada añadida");
         return true;
     }
+
+
 
 }
