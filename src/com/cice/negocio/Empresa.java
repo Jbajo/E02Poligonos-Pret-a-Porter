@@ -1,7 +1,8 @@
 package com.cice.negocio;
 
 import com.cice.Interfaces.Clases.*;
-import com.cice.Interfaces.EnumMateriales;
+import com.cice.enums.EnumDisenio;
+import com.cice.enums.EnumMateriales;
 import com.cice.Interfaces.IPoligono;
 
 import java.util.ArrayList;
@@ -123,6 +124,7 @@ public class Empresa {
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
         char opcion2;
+        int opcion3;
 
         do {
             System.out.println("Introduzca un material --> 1) Carton 2) Plastico 3) Madera");
@@ -132,11 +134,14 @@ public class Empresa {
             System.out.println("Desea que sea de Autor (s/n)");
             opcion2 = sc.nextLine().charAt(0);
         }while ((opcion2 !='s') && (opcion2 !='n'));
-
+        do {
+            System.out.println("Introduzca un diseño --> 1) Basico 2) Coloreado 3) De Autor 4) Estampado");
+            opcion3 = Integer.parseInt(sc.nextLine());
+        }while (opcion3<1 || opcion3 >4);
         if(opcion2=='s')
-            fabricarCuadrilatero(opcion, true);
+            fabricarCuadrilatero(opcion, true, opcion3);
         else
-            fabricarCuadrilatero(opcion, false);
+            fabricarCuadrilatero(opcion, false, opcion3);
     }
 
     /**
@@ -144,7 +149,7 @@ public class Empresa {
      * @param opcion tipo de Cuadrilatero seleccionado
      * @param autor indica si el poligono es o no de autor
      */
-    private void fabricarCuadrilatero (int opcion, boolean autor){
+    private void fabricarCuadrilatero (int opcion, boolean autor, int opcion2){
         Cuadrilatero cuadrilatero = new Cuadrilatero();
 
 
@@ -176,6 +181,16 @@ public class Empresa {
             default:
                 break;
         }
+
+        if (opcion2==0)
+            cuadrilatero.setDisenio(EnumDisenio.BASICO);
+
+        else if (opcion2 ==1)
+            cuadrilatero.setDisenio(EnumDisenio.COLOREADO);
+        else if (opcion2 ==2)
+            cuadrilatero.setDisenio(EnumDisenio.DEAUTOR);
+        else
+            cuadrilatero.setDisenio(EnumDisenio.ESTAMPADO);
         poligonoAniadirCoodenada(cuadrilatero, 4);
 
         listaPoligonos.add(cuadrilatero);
@@ -190,6 +205,7 @@ public class Empresa {
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
         char opcion2;
+        int opcion3;
 
 
         do {
@@ -200,11 +216,15 @@ public class Empresa {
             System.out.println("Desea que sea de Autor (s/n)");
             opcion2 = sc.nextLine().charAt(0);
         }while ((opcion2 !='s') && (opcion2 !='n'));
+        do {
+            System.out.println("Introduzca un diseño --> 1) Basico 2) Coloreado 3) De Autor 4) Estampado");
+            opcion3 = Integer.parseInt(sc.nextLine());
+        }while (opcion3<1 || opcion3 >4);
 
         if(opcion2=='s')
-            fabricarTriangulo(opcion, true);
+            fabricarTriangulo(opcion, true, opcion2);
         else
-            fabricarTriangulo(opcion, false);
+            fabricarTriangulo(opcion, false, opcion2);
     }
     /**
      * Método fabricarTriangulo crea un Triangulo según el tipo seleccionado
@@ -212,7 +232,7 @@ public class Empresa {
      * @param autor indica si el poligono es o no de autor
      */
 
-    private void fabricarTriangulo (int opcion, boolean autor){
+    private void fabricarTriangulo (int opcion, boolean autor, int opcion2){
         Triangulo triangulo = new Triangulo();
 
 
@@ -244,13 +264,26 @@ public class Empresa {
             default:
                 break;
         }
+
+        if (opcion2==0)
+            triangulo.setDisenio(EnumDisenio.BASICO);
+
+            else if (opcion2 ==1)
+            triangulo.setDisenio(EnumDisenio.COLOREADO);
+                else if (opcion2 ==2)
+            triangulo.setDisenio(EnumDisenio.DEAUTOR);
+                    else
+            triangulo.setDisenio(EnumDisenio.ESTAMPADO);
+
         poligonoAniadirCoodenada(triangulo, 4);
 
         listaPoligonos.add(triangulo);
 
 
     }
+    private void poligonoSetMaterial(int opcion2){
 
+    }
     /**
      * Método materialPentagono solicita el material del Pentagono al Usuario
      */
@@ -259,6 +292,7 @@ public class Empresa {
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
         char opcion2;
+        int opcion3;
 
         do {
             System.out.println("Introduzca un material --> 1) Carton 2) Plastico 3) Madera");
@@ -268,11 +302,15 @@ public class Empresa {
             System.out.println("Desea que sea de Autor (s/n)");
             opcion2 = sc.nextLine().charAt(0);
         }while ((opcion2 !='s') && (opcion2 !='n'));
+        do {
+            System.out.println("Introduzca un diseño --> 1) Basico 2) Coloreado 3) De Autor 4) Estampado");
+            opcion3 = Integer.parseInt(sc.nextLine());
+        }while (opcion3<1 || opcion3 >4);
 
         if(opcion2=='s')
-            fabricarPentagono(opcion, true);
+            fabricarPentagono(opcion, true, opcion3);
         else
-            fabricarPentagono(opcion, false);
+            fabricarPentagono(opcion, false, opcion3);
 
     }
 
@@ -281,7 +319,7 @@ public class Empresa {
      * @param opcion tipo de Pentagono seleccionado
      * @param autor indica si el poligono es o no de autor
      */
-    private void fabricarPentagono(int opcion, boolean autor){
+    private void fabricarPentagono(int opcion, boolean autor, int opcion2){
         Pentagono pentagono = new Pentagono();
 
 
@@ -313,6 +351,15 @@ public class Empresa {
             default:
                 break;
         }
+        if (opcion2==0)
+            pentagono.setDisenio(EnumDisenio.BASICO);
+
+        else if (opcion2 ==1)
+            pentagono.setDisenio(EnumDisenio.COLOREADO);
+        else if (opcion2 ==2)
+            pentagono.setDisenio(EnumDisenio.DEAUTOR);
+        else
+           pentagono.setDisenio(EnumDisenio.ESTAMPADO);
         poligonoAniadirCoodenada(pentagono, 4);
 
         listaPoligonos.add(pentagono);
@@ -327,6 +374,7 @@ public class Empresa {
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
         char opcion2;
+        int opcion3;
 
 
         do {
@@ -337,11 +385,15 @@ public class Empresa {
             System.out.println("Desea que sea de Autor (s/n)");
             opcion2 = sc.nextLine().charAt(0);
         }while ((opcion2 !='s') && (opcion2 !='n'));
+        do {
+            System.out.println("Introduzca un diseño --> 1) Basico 2) Coloreado 3) De Autor 4) Estampado");
+            opcion3 = Integer.parseInt(sc.nextLine());
+        }while (opcion3<1 || opcion3 >4);
 
         if(opcion2=='s')
-            fabricarHexagono(opcion, true);
+            fabricarHexagono(opcion, true, opcion3);
         else
-            fabricarHexagono(opcion, false);
+            fabricarHexagono(opcion, false, opcion3);
     }
 
     /**
@@ -350,7 +402,7 @@ public class Empresa {
      * @param autor indica si el poligono es o no de autor
      */
 
-    private void fabricarHexagono(int opcion, boolean autor){
+    private void fabricarHexagono(int opcion, boolean autor, int opcion2){
         Hexagono hexagono = new Hexagono();
 
 
@@ -382,6 +434,16 @@ public class Empresa {
             default:
                 break;
         }
+        if (opcion2==0)
+            hexagono.setDisenio(EnumDisenio.BASICO);
+
+        else if (opcion2 ==1)
+            hexagono.setDisenio(EnumDisenio.COLOREADO);
+        else if (opcion2 ==2)
+            hexagono.setDisenio(EnumDisenio.DEAUTOR);
+        else
+            hexagono.setDisenio(EnumDisenio.ESTAMPADO);
+
         poligonoAniadirCoodenada(hexagono, 4);
 
         listaPoligonos.add(hexagono);

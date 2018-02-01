@@ -1,6 +1,7 @@
 package com.cice.Interfaces.Clases;
 
-import com.cice.Interfaces.EnumMateriales;
+import com.cice.enums.EnumDisenio;
+import com.cice.enums.EnumMateriales;
 import com.cice.Interfaces.IPoligono;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
  */
 public abstract class Poligono implements IPoligono {
     private EnumMateriales material;
+    private EnumDisenio disenio;
     private String color;
     private float precio;
     private ArrayList<Punto> listaVertices;
@@ -20,8 +22,9 @@ public abstract class Poligono implements IPoligono {
     private boolean autor;
 
 
-    public Poligono(EnumMateriales material, ArrayList<Punto> listaVertices, String temporada, boolean autor) {
+    public Poligono(EnumMateriales material, EnumDisenio disenio, ArrayList<Punto> listaVertices, String temporada, boolean autor) {
         this.material = material;
+        this.disenio=disenio;
         this.precio = material.getPrecio();
         this.color = "gris";
         this.listaVertices = listaVertices;
@@ -31,8 +34,9 @@ public abstract class Poligono implements IPoligono {
     }
 
 
-    public Poligono(EnumMateriales material, String temporada, boolean autor) {
+    public Poligono(EnumMateriales material, EnumDisenio disenio, String temporada, boolean autor) {
         this.material = material;
+        this.disenio=disenio;
         this.precio = material.getPrecio();
         this.color = "gris";
         this.listaVertices = new ArrayList<>();
@@ -41,10 +45,19 @@ public abstract class Poligono implements IPoligono {
         this.temporada = temporada;
     }
 
+    public void setDisenio(EnumDisenio disenio) {
+        this.disenio = disenio;
+    }
+
+    public EnumDisenio getDisenio() {
+        return disenio;
+    }
+
     public Poligono() {
         this.listaVertices = new ArrayList<>();
         this.color="gris";
         this.autor=false;
+
     }
 
     public boolean isAutor() {

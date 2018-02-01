@@ -1,4 +1,4 @@
-package com.cice.Interfaces;
+package com.cice.enums;
 
 /**
  * @author Javier Bajo Chacon  javier.bajochacon@gmail.com
