@@ -32,8 +32,8 @@ public class Empresa {
             System.out.println("3. Crear Pentagono");
             System.out.println("4. Crear Hexagono");
             System.out.println("5. Mostrar Poligonos");
-            System.out.println("6. Colorea un Poligono");
-            System.out.println("7. Elimina el color de un Poligono");
+            System.out.println("6. Aplicar Porcentaje a un Polígono");
+            System.out.println("7. Elimina porcentaje de un Poligono");
             System.out.println("8. Eliminar un Poligono");
             System.out.println("0. Salir");
             opcion = sc.nextInt();
@@ -71,12 +71,12 @@ public class Empresa {
                 mostrarPoligonos();
                 break;
             case 6:
-                //colorea Poligono
-                coloreaPoligono();
+                //Aplicar Porcentaje
+                aplicarPorcentaje();
                 break;
             case 7:
-                //elimina el color de un Poligono
-                eliminaColorPoligono();
+                //Eliminar Porcentaje
+                eliminaPorcentaje();
                 break;
             case 8:
                 //elimina Poligono
@@ -150,49 +150,51 @@ public class Empresa {
      * @param autor indica si el poligono es o no de autor
      */
     private void fabricarCuadrilatero (int opcion, boolean autor, int opcion2){
-        Cuadrilatero cuadrilatero = new Cuadrilatero();
 
+        Cuadrilatero cuadrilatero;
 
         switch (opcion) {
             case 1:
-
-                cuadrilatero.setMaterial(EnumMateriales.CARTON);
-                cuadrilatero.setPrecio(EnumMateriales.CARTON.getPrecio());
-                cuadrilatero.setColor("gris");
-                cuadrilatero.setTemporada("primavera-verano");
-                cuadrilatero.setAutor(autor);
+                if (opcion2==0)
+                    cuadrilatero = new Cuadrilatero(EnumMateriales.CARTON, EnumDisenio.BASICO, "primavera-verano",  autor);
+               else if (opcion2 ==1)
+                    cuadrilatero = new Cuadrilatero(EnumMateriales.CARTON, EnumDisenio.COLOREADO, "primavera-verano",  autor);
+                else if (opcion2 ==2)
+                    cuadrilatero = new Cuadrilatero(EnumMateriales.CARTON, EnumDisenio.COLOREADODEAUTOR, "primavera-verano",  autor);
+                else
+                    cuadrilatero = new Cuadrilatero(EnumMateriales.CARTON, EnumDisenio.ESTAMPADO, "primavera-verano",  autor);
+                poligonoAniadirCoodenada(cuadrilatero, 4);
+                listaPoligonos.add(cuadrilatero);
                 break;
             case 2:
 
-                cuadrilatero.setMaterial(EnumMateriales.PLASTICO);
-                cuadrilatero.setPrecio(EnumMateriales.PLASTICO.getPrecio());
-                cuadrilatero.setColor("gris");
-                cuadrilatero.setTemporada("primavera-verano");
-                cuadrilatero.setAutor(autor);
+                if (opcion2==0)
+                    cuadrilatero = new Cuadrilatero(EnumMateriales.PLASTICO, EnumDisenio.BASICO, "primavera-verano",  autor);
+                else if (opcion2 ==1)
+                    cuadrilatero = new Cuadrilatero(EnumMateriales.PLASTICO, EnumDisenio.COLOREADO, "primavera-verano",  autor);
+                else if (opcion2 ==2)
+                    cuadrilatero = new Cuadrilatero(EnumMateriales.PLASTICO, EnumDisenio.COLOREADODEAUTOR, "primavera-verano",  autor);
+                else
+                    cuadrilatero = new Cuadrilatero(EnumMateriales.PLASTICO, EnumDisenio.ESTAMPADO, "primavera-verano",  autor);
+                poligonoAniadirCoodenada(cuadrilatero, 4);
+                listaPoligonos.add(cuadrilatero);
                 break;
             case 3:
 
-                cuadrilatero.setMaterial(EnumMateriales.MADERA);
-                cuadrilatero.setPrecio(EnumMateriales.MADERA.getPrecio());
-                cuadrilatero.setColor("gris");
-                cuadrilatero.setTemporada("primavera-verano");
-                cuadrilatero.setAutor(autor);
+                if (opcion2==0)
+                    cuadrilatero = new Cuadrilatero(EnumMateriales.MADERA, EnumDisenio.BASICO, "primavera-verano",  autor);
+                else if (opcion2 ==1)
+                    cuadrilatero = new Cuadrilatero(EnumMateriales.MADERA, EnumDisenio.COLOREADO, "primavera-verano",  autor);
+                else if (opcion2 ==2)
+                    cuadrilatero = new Cuadrilatero(EnumMateriales.MADERA, EnumDisenio.COLOREADODEAUTOR, "primavera-verano",  autor);
+                else
+                    cuadrilatero = new Cuadrilatero(EnumMateriales.MADERA, EnumDisenio.ESTAMPADO, "primavera-verano",  autor);
+                poligonoAniadirCoodenada(cuadrilatero, 4);
+                listaPoligonos.add(cuadrilatero);
                 break;
             default:
                 break;
         }
-
-        if (opcion2==0)
-            cuadrilatero.setDisenio(EnumDisenio.BASICO);
-
-        else if (opcion2 ==1)
-            cuadrilatero.setDisenio(EnumDisenio.COLOREADO);
-        else if (opcion2 ==2)
-            cuadrilatero.setDisenio(EnumDisenio.COLOREADODEAUTOR);
-        else
-            cuadrilatero.setDisenio(EnumDisenio.ESTAMPADO);
-        poligonoAniadirCoodenada(cuadrilatero, 4);
-        listaPoligonos.add(cuadrilatero);
 
         }
 
@@ -232,51 +234,50 @@ public class Empresa {
      */
 
     private void fabricarTriangulo (int opcion, boolean autor, int opcion2){
-        Triangulo triangulo = new Triangulo();
-
+        Triangulo triangulo;
 
         switch (opcion) {
             case 1:
-
-                triangulo.setMaterial(EnumMateriales.CARTON);
-                triangulo.setPrecio(EnumMateriales.CARTON.getPrecio());
-                triangulo.setColor("gris");
-                triangulo.setTemporada("primavera-verano");
-                triangulo.setAutor(autor);
+                if (opcion2==0)
+                    triangulo = new Triangulo(EnumMateriales.CARTON, EnumDisenio.BASICO, "primavera-verano",  autor);
+                else if (opcion2 ==1)
+                    triangulo = new Triangulo(EnumMateriales.CARTON, EnumDisenio.COLOREADO, "primavera-verano",  autor);
+                else if (opcion2 ==2)
+                    triangulo = new Triangulo(EnumMateriales.CARTON, EnumDisenio.COLOREADODEAUTOR, "primavera-verano",  autor);
+                else
+                    triangulo = new Triangulo(EnumMateriales.CARTON, EnumDisenio.ESTAMPADO, "primavera-verano",  autor);
+                poligonoAniadirCoodenada(triangulo, 4);
+                listaPoligonos.add(triangulo);
                 break;
             case 2:
 
-                triangulo.setMaterial(EnumMateriales.PLASTICO);
-                triangulo.setPrecio(EnumMateriales.PLASTICO.getPrecio());
-                triangulo.setColor("gris");
-                triangulo.setTemporada("primavera-verano");
-                triangulo.setAutor(autor);
+                if (opcion2==0)
+                    triangulo = new Triangulo(EnumMateriales.PLASTICO, EnumDisenio.BASICO, "primavera-verano",  autor);
+                else if (opcion2 ==1)
+                    triangulo = new Triangulo(EnumMateriales.PLASTICO, EnumDisenio.COLOREADO, "primavera-verano",  autor);
+                else if (opcion2 ==2)
+                    triangulo = new Triangulo(EnumMateriales.PLASTICO, EnumDisenio.COLOREADODEAUTOR, "primavera-verano",  autor);
+                else
+                    triangulo = new Triangulo(EnumMateriales.PLASTICO, EnumDisenio.ESTAMPADO, "primavera-verano",  autor);
+                poligonoAniadirCoodenada(triangulo, 4);
+                listaPoligonos.add(triangulo);
                 break;
             case 3:
 
-                triangulo.setMaterial(EnumMateriales.MADERA);
-                triangulo.setPrecio(EnumMateriales.MADERA.getPrecio());
-                triangulo.setColor("gris");
-                triangulo.setTemporada("primavera-verano");
-                triangulo.setAutor(autor);
+                if (opcion2==0)
+                    triangulo = new Triangulo(EnumMateriales.MADERA, EnumDisenio.BASICO, "primavera-verano",  autor);
+                else if (opcion2 ==1)
+                    triangulo = new Triangulo(EnumMateriales.MADERA, EnumDisenio.COLOREADO, "primavera-verano",  autor);
+                else if (opcion2 ==2)
+                    triangulo = new Triangulo(EnumMateriales.MADERA, EnumDisenio.COLOREADODEAUTOR, "primavera-verano",  autor);
+                else
+                    triangulo = new Triangulo(EnumMateriales.MADERA, EnumDisenio.ESTAMPADO, "primavera-verano",  autor);
+                poligonoAniadirCoodenada(triangulo, 4);
+                listaPoligonos.add(triangulo);
                 break;
             default:
                 break;
         }
-
-        if (opcion2==0)
-            triangulo.setDisenio(EnumDisenio.BASICO);
-
-        else if (opcion2 ==1)
-            triangulo.setDisenio(EnumDisenio.COLOREADO);
-        else if (opcion2 ==2)
-            triangulo.setDisenio(EnumDisenio.COLOREADODEAUTOR);
-        else
-            triangulo.setDisenio(EnumDisenio.ESTAMPADO);
-
-        poligonoAniadirCoodenada(triangulo, 4);
-
-        listaPoligonos.add(triangulo);
 
 
     }
@@ -319,49 +320,50 @@ public class Empresa {
      * @param autor indica si el poligono es o no de autor
      */
     private void fabricarPentagono(int opcion, boolean autor, int opcion2){
-        Pentagono pentagono = new Pentagono();
-
+        Pentagono pentagono;
 
         switch (opcion) {
             case 1:
-
-                pentagono.setMaterial(EnumMateriales.CARTON);
-                pentagono.setPrecio(EnumMateriales.CARTON.getPrecio());
-                pentagono.setColor("gris");
-                pentagono.setTemporada("primavera-verano");
-                pentagono.setAutor(autor);
+                if (opcion2==0)
+                    pentagono = new Pentagono(EnumMateriales.CARTON, EnumDisenio.BASICO, "primavera-verano",  autor);
+                else if (opcion2 ==1)
+                    pentagono = new Pentagono(EnumMateriales.CARTON, EnumDisenio.COLOREADO, "primavera-verano",  autor);
+                else if (opcion2 ==2)
+                    pentagono = new Pentagono(EnumMateriales.CARTON, EnumDisenio.COLOREADODEAUTOR, "primavera-verano",  autor);
+                else
+                    pentagono = new Pentagono(EnumMateriales.CARTON, EnumDisenio.ESTAMPADO, "primavera-verano",  autor);
+                poligonoAniadirCoodenada(pentagono, 4);
+                listaPoligonos.add(pentagono);
                 break;
             case 2:
 
-                pentagono.setMaterial(EnumMateriales.PLASTICO);
-                pentagono.setPrecio(EnumMateriales.PLASTICO.getPrecio());
-                pentagono.setColor("gris");
-                pentagono.setTemporada("primavera-verano");
-                pentagono.setAutor(autor);
+                if (opcion2==0)
+                    pentagono = new Pentagono(EnumMateriales.PLASTICO, EnumDisenio.BASICO, "primavera-verano",  autor);
+                else if (opcion2 ==1)
+                    pentagono = new Pentagono(EnumMateriales.PLASTICO, EnumDisenio.COLOREADO, "primavera-verano",  autor);
+                else if (opcion2 ==2)
+                    pentagono = new Pentagono(EnumMateriales.PLASTICO, EnumDisenio.COLOREADODEAUTOR, "primavera-verano",  autor);
+                else
+                    pentagono = new Pentagono(EnumMateriales.PLASTICO, EnumDisenio.ESTAMPADO, "primavera-verano",  autor);
+                poligonoAniadirCoodenada(pentagono, 4);
+                listaPoligonos.add(pentagono);
                 break;
             case 3:
 
-                pentagono.setMaterial(EnumMateriales.MADERA);
-                pentagono.setPrecio(EnumMateriales.MADERA.getPrecio());
-                pentagono.setColor("gris");
-                pentagono.setTemporada("primavera-verano");
-                pentagono.setAutor(autor);
+                if (opcion2==0)
+                    pentagono = new Pentagono(EnumMateriales.MADERA, EnumDisenio.BASICO, "primavera-verano",  autor);
+                else if (opcion2 ==1)
+                    pentagono = new Pentagono(EnumMateriales.MADERA, EnumDisenio.COLOREADO, "primavera-verano",  autor);
+                else if (opcion2 ==2)
+                    pentagono = new Pentagono(EnumMateriales.MADERA, EnumDisenio.COLOREADODEAUTOR, "primavera-verano",  autor);
+                else
+                    pentagono = new Pentagono(EnumMateriales.MADERA, EnumDisenio.ESTAMPADO, "primavera-verano",  autor);
+                poligonoAniadirCoodenada(pentagono, 4);
+                listaPoligonos.add(pentagono);
                 break;
             default:
                 break;
         }
-        if (opcion2==0)
-            pentagono.setDisenio(EnumDisenio.BASICO);
-
-        else if (opcion2 ==1)
-            pentagono.setDisenio(EnumDisenio.COLOREADO);
-        else if (opcion2 ==2)
-            pentagono.setDisenio(EnumDisenio.COLOREADODEAUTOR);
-        else
-           pentagono.setDisenio(EnumDisenio.ESTAMPADO);
-        poligonoAniadirCoodenada(pentagono, 4);
-
-        listaPoligonos.add(pentagono);
 
 
     }
@@ -402,50 +404,50 @@ public class Empresa {
      */
 
     private void fabricarHexagono(int opcion, boolean autor, int opcion2){
-        Hexagono hexagono = new Hexagono();
-
+        Hexagono hexagono;
 
         switch (opcion) {
             case 1:
-
-                hexagono.setMaterial(EnumMateriales.CARTON);
-                hexagono.setPrecio(EnumMateriales.CARTON.getPrecio());
-                hexagono.setColor("gris");
-                hexagono.setTemporada("primavera-verano");
-                hexagono.setAutor(autor);
+                if (opcion2==0)
+                    hexagono = new Hexagono(EnumMateriales.CARTON, EnumDisenio.BASICO, "primavera-verano",  autor);
+                else if (opcion2 ==1)
+                    hexagono = new Hexagono(EnumMateriales.CARTON, EnumDisenio.COLOREADO, "primavera-verano",  autor);
+                else if (opcion2 ==2)
+                    hexagono = new Hexagono(EnumMateriales.CARTON, EnumDisenio.COLOREADODEAUTOR, "primavera-verano",  autor);
+                else
+                    hexagono = new Hexagono(EnumMateriales.CARTON, EnumDisenio.ESTAMPADO, "primavera-verano",  autor);
+                poligonoAniadirCoodenada(hexagono, 4);
+                listaPoligonos.add(hexagono);
                 break;
             case 2:
 
-                hexagono.setMaterial(EnumMateriales.PLASTICO);
-                hexagono.setPrecio(EnumMateriales.PLASTICO.getPrecio());
-                hexagono.setColor("gris");
-                hexagono.setTemporada("primavera-verano");
-                hexagono.setAutor(autor);
+                if (opcion2==0)
+                    hexagono = new Hexagono(EnumMateriales.PLASTICO, EnumDisenio.BASICO, "primavera-verano",  autor);
+                else if (opcion2 ==1)
+                    hexagono = new Hexagono(EnumMateriales.PLASTICO, EnumDisenio.COLOREADO, "primavera-verano",  autor);
+                else if (opcion2 ==2)
+                    hexagono = new Hexagono(EnumMateriales.PLASTICO, EnumDisenio.COLOREADODEAUTOR, "primavera-verano",  autor);
+                else
+                    hexagono = new Hexagono(EnumMateriales.PLASTICO, EnumDisenio.ESTAMPADO, "primavera-verano",  autor);
+                poligonoAniadirCoodenada(hexagono, 4);
+                listaPoligonos.add(hexagono);
                 break;
             case 3:
 
-                hexagono.setMaterial(EnumMateriales.MADERA);
-                hexagono.setPrecio(EnumMateriales.MADERA.getPrecio());
-                hexagono.setColor("gris");
-                hexagono.setTemporada("primavera-verano");
-                hexagono.setAutor(autor);
+                if (opcion2==0)
+                    hexagono = new Hexagono(EnumMateriales.MADERA, EnumDisenio.BASICO, "primavera-verano",  autor);
+                else if (opcion2 ==1)
+                    hexagono = new Hexagono(EnumMateriales.MADERA, EnumDisenio.COLOREADO, "primavera-verano",  autor);
+                else if (opcion2 ==2)
+                    hexagono = new Hexagono(EnumMateriales.MADERA, EnumDisenio.COLOREADODEAUTOR, "primavera-verano",  autor);
+                else
+                    hexagono = new Hexagono(EnumMateriales.MADERA, EnumDisenio.ESTAMPADO, "primavera-verano",  autor);
+                poligonoAniadirCoodenada(hexagono, 4);
+                listaPoligonos.add(hexagono);
                 break;
             default:
                 break;
         }
-        if (opcion2==0)
-            hexagono.setDisenio(EnumDisenio.BASICO);
-
-        else if (opcion2 ==1)
-            hexagono.setDisenio(EnumDisenio.COLOREADO);
-        else if (opcion2 ==2)
-            hexagono.setDisenio(EnumDisenio.COLOREADODEAUTOR);
-        else
-            hexagono.setDisenio(EnumDisenio.ESTAMPADO);
-
-        poligonoAniadirCoodenada(hexagono, 4);
-
-        listaPoligonos.add(hexagono);
 
 
     }
@@ -493,7 +495,7 @@ public class Empresa {
     /**
      * Méotdo coloreaPoligono colorea un Polígono seleccionado de la listaPoligonos
      */
-    private void coloreaPoligono(){
+    private void aplicarPorcentaje(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
         String aux = "gris";
@@ -505,22 +507,14 @@ public class Empresa {
                     opcion = Integer.parseInt(sc.nextLine());
                     opcion--;
             } while (opcion < 0 || opcion > listaPoligonos.size());
-            System.out.println("Introduzca un color para el Poligono...");
-            do {
-                if (!aux.matches("[a-zA-Z]+")) {
-                    System.out.println("Color erroneo");
-                    System.out.println("Introduzca un color para el Poligono...");
-                }
-                aux = sc.nextLine();
-            }while (!aux.matches("[a-zA-Z]+"));
-            listaPoligonos.get(opcion).coloreaPoligono(aux);
+            listaPoligonos.get(opcion).aplicarPorcantaje();
         }
     }
 
     /**
      * Método eliminaColorPoligono elimina el Color de un Poligono y su suplemento
      */
-    private void eliminaColorPoligono(){
+    private void eliminaPorcentaje(){
         Scanner sc = new Scanner (System.in);
         int opcion = 0;
 
@@ -531,7 +525,7 @@ public class Empresa {
                 opcion = Integer.parseInt(sc.nextLine());
                 opcion--;
             } while (opcion < 0 || opcion > listaPoligonos.size());
-            listaPoligonos.get(opcion).quitaColorPoligono();
+            listaPoligonos.get(opcion).eliminarPorcentaje();
         }
     }
 

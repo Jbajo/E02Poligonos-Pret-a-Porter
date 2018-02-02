@@ -7,11 +7,11 @@ package com.cice.Interfaces;
  */
 public interface IPoligono {
 
-    void coloreaPoligono(String color);
+    void aplicarPorcantaje();
     void mostrarPrecio();
     void descripcionProducto();
 
-    default void quitaColorPoligono(){
+    default void eliminarPorcentaje(){
       System.out.println("Vamos a colorear el Poligono");
     }
 

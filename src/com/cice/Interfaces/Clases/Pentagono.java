@@ -17,30 +17,32 @@ public class Pentagono extends Poligono {
         super(material, disenio, temporada, autor);
     }
 
+    public Pentagono(String temporada, boolean autor){
+        super (temporada, autor);
+    }
+
     @Override
-    public void coloreaPoligono(String color) {
-        if(this.getColor().equals("gris")) {
-            this.setSuplemento(getDisenio().getIncremento());
-            this.setPrecio(this.getPrecio() * (1 + this.getSuplemento()));
-            this.setColor(color);
-        }
+    public void aplicarPorcantaje() {
+        this.setSuplemento(getDisenio().getIncremento());
+        this.setPrecio(this.getPrecio() * (1 + this.getSuplemento()));
     }
 
 
 
     @Override
-    public void quitaColorPoligono() {
-        this.setColor("gris");        ;
-        this.setPrecio(this.getPrecio()/ (1 + this.getSuplemento()));
+    public void eliminarPorcentaje() {
+        this.setPrecio(this.getPrecio() / (1 + this.getSuplemento()));
         this.setSuplemento(0f);
     }
     @Override
     public String toString() {
         return "Pentagono{" +
-                "material=" + this.getMaterial() + '\'' +
-                ", color='" + this.getColor() + '\'' +
-                ", precio=" + this.getPrecio() + '\'' +
-                ", suplemento=" + this.getSuplemento() + "}";
+                "material=" + this.getMaterial()+
+                ", disenio=" + this.getDisenio() +
+                ", precio=" + this.getPrecio() +
+                ", suplemento=" + this.getSuplemento()+
+                ", temporada='" + this.getTemporada() + '\'' +
+                '}';
     }
     @Override
     public void mostrarPrecio() {

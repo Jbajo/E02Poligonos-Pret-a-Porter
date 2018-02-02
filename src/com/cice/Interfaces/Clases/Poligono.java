@@ -33,7 +33,11 @@ public abstract class Poligono implements IPoligono {
         this.temporada = temporada;
     }
 
+    protected Poligono (String temporada, boolean autor){
+        this.temporada=temporada;
+        this.autor=autor;
 
+    }
     protected Poligono(EnumMateriales material, EnumDisenio disenio, String temporada, boolean autor) {
         this.material = material;
         this.disenio=disenio;
@@ -45,72 +49,72 @@ public abstract class Poligono implements IPoligono {
         this.temporada = temporada;
     }
 
-    public void setDisenio(EnumDisenio disenio) {
+    protected void setDisenio(EnumDisenio disenio) {
         this.disenio = disenio;
     }
 
-    public EnumDisenio getDisenio() {
+    protected EnumDisenio getDisenio() {
         return disenio;
     }
 
-    public Poligono() {
+    protected Poligono() {
         this.listaVertices = new ArrayList<>();
         this.color="gris";
         this.autor=false;
 
     }
 
-    public boolean isAutor() {
+    protected boolean isAutor() {
         return autor;
     }
 
-    public void setAutor(boolean autor) {
+    protected void setAutor(boolean autor) {
         this.autor = autor;
     }
 
-    public void setMaterial(EnumMateriales material) {
+    protected void setMaterial(EnumMateriales material) {
         this.material = material;
     }
 
-    public String getColor() {
+    protected String getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    protected void setColor(String color) {
         this.color = color;
     }
 
-    public float getPrecio(){
+    protected float getPrecio(){
         return this.precio;
     }
 
 
-    public EnumMateriales getMaterial(){
+    protected EnumMateriales getMaterial(){
         return this.material;
 
     }
 
-    public String getTemporada() {
+    protected String getTemporada() {
         return temporada;
     }
 
-    public void setTemporada(String temporada) {
+    protected void setTemporada(String temporada) {
         this.temporada = temporada;
     }
 
-    public float getSuplemento() {
+    protected float getSuplemento() {
         return suplemento;
     }
 
-    public void setSuplemento(float suplemento) {
+    protected void setSuplemento(float suplemento) {
         this.suplemento = suplemento;
     }
 
-    public ArrayList<Punto> getListaVertices() {
+    protected ArrayList<Punto> getListaVertices() {
         return listaVertices;
     }
 
-    public void setListaVertices(ArrayList<Punto> listaVertices) {
+    protected void setListaVertices(ArrayList<Punto> listaVertices) {
         this.listaVertices = listaVertices;
     }
 
@@ -136,18 +140,18 @@ public abstract class Poligono implements IPoligono {
         return false;
     }
 
-   public void setPrecio(float precio) {
+   protected void setPrecio(float precio) {
         this.precio = precio;
     }
 
     @Override
     public String toString() {
         return "Poligono{" +
-                "material=" + material + '\'' +
-                ", color='" + color + '\'' +
-                ", precio=" + precio +'\'' +
-                ", suplemento=" + suplemento + "}";
+                "material=" + material +
+                ", disenio=" + disenio +
+                ", precio=" + precio +
+                ", suplemento=" + suplemento +
+                ", temporada='" + temporada + '\'' +
+                '}';
     }
-
-
 }
