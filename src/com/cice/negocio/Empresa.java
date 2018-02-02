@@ -493,7 +493,7 @@ public class Empresa {
     }
 
     /**
-     * Méotdo coloreaPoligono colorea un Polígono seleccionado de la listaPoligonos
+     * Méotodo aplicarPorcentaje aplica su Porcentaje al Poligono y modifica el precio base
      */
     private void aplicarPorcentaje(){
         Scanner sc = new Scanner (System.in);
@@ -512,7 +512,7 @@ public class Empresa {
     }
 
     /**
-     * Método eliminaColorPoligono elimina el Color de un Poligono y su suplemento
+     * Méotodo eliminarPorcentaje elimina su Porcentaje al Poligono y modifica el precio base
      */
     private void eliminaPorcentaje(){
         Scanner sc = new Scanner (System.in);
