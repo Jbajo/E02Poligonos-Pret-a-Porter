@@ -46,12 +46,19 @@ public class Pentagono extends Poligono {
     }
     @Override
     public void mostrarPrecio() {
-
+        System.out.println("El precio del Pentagono es --> " + this.getPrecio());
     }
+
 
     @Override
     public void descripcionProducto() {
-
+        System.out.println("Pentagono{" +
+                "material=" + this.getMaterial()+
+                ", disenio=" + this.getDisenio() +
+                ", precio=" + this.getPrecio() +
+                ", suplemento=" + this.getSuplemento()+
+                ", temporada='" + this.getTemporada() + '\'' +
+                '}');
     }
 
 }
